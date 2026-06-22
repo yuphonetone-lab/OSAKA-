@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>大阪 3 天 2 夜旅遊行程規劃</title>
+  <style>
+    :root {
+      --ink: #1d2528;
+      --muted: #667173;
+      --line: #d8dedb;
+      --paper: #fbfaf6;
+      --panel: #ffffff;
+      --teal: #006d77;
+      --coral: #d95d39;
+      --gold: #c78b1d;
+      --green: #47735e;
+      --shadow: 0 18px 55px rgba(18, 32, 34, .12);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      align-items: end;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.70)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Dotonbori_Canal_1.jpg") center / cover;
+    }
+
+    .hero-inner,
+    main > section,
+    .nav-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      padding: 96px 0 84px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      margin: 0 0 18px;
+      color: rgba(255,255,255,.86);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 92px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 22px 0 0;
+      color: rgba(255,255,255,.90);
+      font-size: clamp(17px, 2.2vw, 22px);
+    }
+
+    .quick {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 42px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.24);
+      backdrop-filter: blur(8px);
+    }
+
+    .quick div {
+      padding: 18px;
+      background: rgba(0,0,0,.18);
+    }
+
+    .quick strong {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,.72);
+    }
+
+    .quick span {
+      display: block;
+      margin-top: 6px;
+      font-weight: 800;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(251,250,246,.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    .nav-inner a {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-inner a:hover {
+      color: var(--ink);
+      background: #edf1ee;
+    }
+
+    section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 380px);
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .section-head p,
+    .lead {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .card-img {
+      height: 210px;
+      background: #dfe5e1;
+    }
+
+    .card-body { padding: 20px; }
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .card p,
+    .note,
+    li {
+      color: var(--muted);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .fact {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--teal);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .fact span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 26px;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .day:first-of-type { border-top: 0; }
+
+    .day-label {
+      position: sticky;
+      top: 72px;
+      align-self: start;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .day-label small {
+      display: block;
+      color: rgba(255,255,255,.68);
+      font-weight: 700;
+    }
+
+    .day-label strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .slot {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .time {
+      color: var(--coral);
+      font-weight: 900;
+    }
+
+    .slot h4 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .slot p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .panel {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .panel h3 { margin-bottom: 14px; }
+    ul { padding-left: 1.2em; margin: 10px 0 0; }
+    li + li { margin-top: 8px; }
+
+    .route {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .route span {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #edf1ee;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .budget {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf1ee;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .sources a {
+      display: inline-block;
+      margin: 8px 10px 0 0;
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 34px 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .quick,
+      .facts,
+      .grid,
+      .section-head,
+      .split,
+      .day {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { min-height: 86vh; }
+      .day-label { position: static; }
+      .slot { grid-template-columns: 78px 1fr; }
+      section { padding: 56px 0; }
+    }
+
+    @media (max-width: 520px) {
+      .quick { grid-template-columns: 1fr 1fr; }
+      .slot { grid-template-columns: 1fr; }
+      .card-img { height: 190px; }
+      th, td { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Osaka 3D2N Itinerary · 難波住宿 · 美食散策 · USJ</p>
+      <h1>大阪 3 天 2 夜自由行完整規劃</h1>
+      <p>以第一次造訪大阪最順的動線規劃：住難波，第一天吃逛道頓堀，第二天整天 Universal Studios Japan，第三天大阪城、新世界與阿倍野展望台收尾。</p>
+      <div class="quick">
+        <div><strong>建議住宿</strong><span>難波 / 心齋橋</span></div>
+        <div><strong>主要交通</strong><span>Nankai + Osaka Metro + JR</span></div>
+        <div><strong>旅遊節奏</strong><span>中等偏充實</span></div>
+        <div><strong>適合對象</strong><span>情侶 / 朋友 / 家庭</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#overview">總覽</a>
+      <a href="#stay">住宿</a>
+      <a href="#transport">交通</a>
+      <a href="#itinerary">每日行程</a>
+      <a href="#food">美食</a>
+      <a href="#budget">預算</a>
+      <a href="#checklist">行前清單</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <div class="section-head">
+        <div>
+          <h2>行程核心：少換車、多留胃、晚上住回熱鬧區</h2>
+        </div>
+        <p>大阪景點密度高，3 天 2 夜最怕排太散。這份規劃把住宿放在難波，讓機場進出、道頓堀宵夜、心齋橋購物都不必拉長交通時間。</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>Day 1</strong><span>關西機場 → 難波 → 黑門市場 → 心齋橋 → 道頓堀</span></div>
+        <div class="fact"><strong>Day 2</strong><span>Universal Studios Japan 一日遊，晚上回梅田或難波吃飯</span></div>
+        <div class="fact"><strong>Day 3</strong><span>大阪城 → 新世界 → 阿倍野 Harukas → 機場</span></div>
+        <div class="fact"><strong>票券策略</strong><span>市區用 ICOCA / Osaka Metro 一日券；USJ 日單買門票</span></div>
+      </div>
+    </section>
+
+    <section id="stay">
+      <div class="section-head">
+        <h2>住宿建議</h2>
+        <p>3 天 2 夜不建議每天換飯店。以「難波站、心齋橋站、長堀橋站」周邊最平衡，晚歸安全、餐廳多、去機場方便。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Namba_Station.JPG" alt="大阪難波站周邊"></div>
+          <div class="card-body">
+            <span class="tag">最推薦區域</span>
+            <h3>難波站周邊</h3>
+            <p>優點是南海電鐵直達關西機場，離道頓堀、黑門市場、千日前都近。適合想把交通壓到最低的人。</p>
+            <ul>
+              <li>高預算：Swissotel Nankai Osaka</li>
+              <li>中預算：Hotel Forza Osaka Namba / Candeo Hotels Osaka Namba</li>
+              <li>省預算：難波、長堀橋一帶商務旅館</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shinsaibashi%20Osaka%20Japan01-r.jpg" alt="心齋橋商店街"></div>
+          <div class="card-body">
+            <span class="tag">購物優先</span>
+            <h3>心齋橋 / 長堀橋</h3>
+            <p>藥妝、潮牌、百貨與餐廳集中，晚上逛街舒服。到難波可步行或搭一站 Metro。</p>
+            <ul>
+              <li>適合喜歡購物、宵夜、咖啡店的人</li>
+              <li>退房後可寄放行李再最後採買</li>
+              <li>注意熱門日期房價浮動大，建議提早訂</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Umeda_Sky_Building_2014.JPG" alt="大阪梅田空中庭園"></div>
+          <div class="card-body">
+            <span class="tag">備選區域</span>
+            <h3>梅田 / 大阪站</h3>
+            <p>交通樞紐強，去京都、神戶更順，但 3 天 2 夜主玩大阪時，夜生活與機場往返不如難波直覺。</p>
+            <ul>
+              <li>適合想加排京都、神戶的人</li>
+              <li>百貨餐廳選擇很多</li>
+              <li>第一次大阪仍以難波更省心</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="transport">
+      <div class="section-head">
+        <h2>交通規劃</h2>
+        <p>大阪市區交通以 Metro 和 JR 補足即可。購票前先看當天實際移動次數，不必為了買票券硬排景點。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>機場往返</h3>
+          <ul>
+            <li>關西機場到難波：Nankai Rapi:t 約 34 至 39 分鐘，Airport Express 約 43 分鐘。</li>
+            <li>住難波：優先選南海電鐵，抵達後步行或短程計程車到飯店。</li>
+            <li>住梅田：可考慮 JR Haruka / 關空快速到大阪站周邊。</li>
+          </ul>
+          <div class="route">
+            <span>KIX</span><span>Nankai</span><span>Namba</span><span>Hotel</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>市區與票券</h3>
+          <ul>
+            <li>ICOCA：最省腦，適合不想算票券的人。</li>
+            <li>Osaka Metro Enjoy Eco Card：大阪 Metro 與大阪 City Bus 一日無限搭，成人平日 820 日圓、週末假日 620 日圓。</li>
+            <li>Osaka Amazing Pass：適合一天內密集跑多個合作景點；新版與電子票內容請購買前看官方頁。</li>
+            <li>USJ：搭 JR 到 Universal City 站，門票與 Express Pass 建議提早在官網確認日期價格。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="itinerary">
+      <div class="section-head">
+        <h2>每日行程</h2>
+        <p>時間以「早班機抵達、晚班機離開」設計。若第一天中午後才到，把黑門市場移到第三天早上即可。</p>
+      </div>
+
+      <article class="day">
+        <div class="day-label"><small>Day 1</small><strong>難波與道頓堀</strong></div>
+        <div class="timeline">
+          <div class="slot"><div class="time">10:30</div><div><h4>抵達關西機場，搭南海電鐵進難波</h4><p>先購買 ICOCA 或直接刷交通卡。若搭 Rapi:t，記得劃位；行李多可選靠近難波站的飯店。</p></div></div>
+          <div class="slot"><div class="time">12:00</div><div><h4>飯店寄放行李，午餐吃黑門市場</h4><p>推薦海鮮丼、烤干貝、豆乳甜甜圈。市場單價偏觀光區，建議少量多樣，不要一攤吃滿。</p></div></div>
+          <div class="slot"><div class="time">14:00</div><div><h4>難波八阪神社 → 千日前道具屋筋</h4><p>拍獅子殿後步行到道具屋筋，看章魚燒器、餐具、食品模型，順路回難波商圈。</p></div></div>
+          <div class="slot"><div class="time">16:00</div><div><h4>心齋橋筋商店街、橘子街</h4><p>藥妝、服飾、雜貨集中。購物重點留到最後一晚也可以，第一天先熟悉地形。</p></div></div>
+          <div class="slot"><div class="time">18:30</div><div><h4>道頓堀晚餐與夜景</h4><p>晚餐可選一蘭、金龍拉麵、千房大阪燒、Creo-Ru 章魚燒。吃完到戎橋拍固力果跑跑人。</p></div></div>
+          <div class="slot"><div class="time">21:00</div><div><h4>法善寺橫丁散步</h4><p>石板小巷比道頓堀安靜，很適合作為第一晚收尾。想喝一杯可找附近居酒屋。</p></div></div>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="day-label"><small>Day 2</small><strong>USJ 一日遊</strong></div>
+        <div class="timeline">
+          <div class="slot"><div class="time">07:00</div><div><h4>出發前往 Universal City</h4><p>從難波出發通常需轉 JR。熱門日建議提早到，入園時間與設施開放以 USJ 官網與 App 為準。</p></div></div>
+          <div class="slot"><div class="time">08:30</div><div><h4>入園先處理 Super Nintendo World</h4><p>若需要整理券，入園後立刻用 App 操作。想穩定玩重點設施，熱門日期可考慮 Express Pass。</p></div></div>
+          <div class="slot"><div class="time">11:30</div><div><h4>園區午餐</h4><p>避開 12:00 至 13:00 尖峰。想省時間可先吃小食，下午再補正餐。</p></div></div>
+          <div class="slot"><div class="time">13:00</div><div><h4>哈利波特、侏羅紀、Minion 區域</h4><p>依等待時間調整順序。戶外設施受天氣影響，雨天先衝室內與劇場型設施。</p></div></div>
+          <div class="slot"><div class="time">17:30</div><div><h4>伴手禮與 CityWalk 晚餐</h4><p>離園前先買限定商品。晚餐可在 Universal CityWalk 解決，或回難波吃燒肉、居酒屋。</p></div></div>
+          <div class="slot"><div class="time">21:00</div><div><h4>回飯店休息</h4><p>第二天步數通常很高，第三天排大阪城與新世界即可，不再硬塞郊區行程。</p></div></div>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="day-label"><small>Day 3</small><strong>大阪城與新世界</strong></div>
+        <div class="timeline">
+          <div class="slot"><div class="time">09:00</div><div><h4>退房寄行李，前往大阪城公園</h4><p>搭 Metro 到谷町四丁目或森之宮。大阪城天守閣可線上購票，櫻花季與假日建議早到。</p></div></div>
+          <div class="slot"><div class="time">11:30</div><div><h4>大阪城公園散步與午餐</h4><p>若想輕鬆可在 JO-TERRACE OSAKA 用餐；想更在地可回谷町、森之宮周邊找咖哩或定食。</p></div></div>
+          <div class="slot"><div class="time">13:30</div><div><h4>新世界、通天閣、ジャンジャン横丁</h4><p>午后逛復古街景，吃串炸。串炸醬料與點餐規則依店家公告，不要共用沾醬。</p></div></div>
+          <div class="slot"><div class="time">15:30</div><div><h4>阿倍野 Harukas 300 展望台</h4><p>天氣好時可看大阪市景。若預算有限，也可改逛天王寺 MIO、近鐵百貨。</p></div></div>
+          <div class="slot"><div class="time">17:30</div><div><h4>回難波取行李，前往關西機場</h4><p>建議國際線起飛前 3 小時抵達機場。最後採買不要壓太緊，難波站地下街容易迷路。</p></div></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="food">
+      <div class="section-head">
+        <h2>美食清單</h2>
+        <p>大阪美食很密集，這裡按區域安排，方便你依照當天動線替換，不用為了一間店跨區折返。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Takoyaki.jpg/800px-Takoyaki.jpg" alt="大阪章魚燒"></div>
+          <div class="card-body">
+            <span class="tag">難波 / 道頓堀</span>
+            <h3>章魚燒、大阪燒、拉麵</h3>
+            <p>章魚燒可排 Creo-Ru、十八番；大阪燒可選千房、美津の；拉麵則是一蘭、金龍方便不踩空。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/KushikatsuDaruma01.jpg/800px-KushikatsuDaruma01.jpg" alt="大阪串炸"></div>
+          <div class="card-body">
+            <span class="tag">新世界</span>
+            <h3>串炸與居酒屋</h3>
+            <p>串炸だるま、八重勝一帶都很有名。建議避開正餐尖峰，點炸牛肉、蓮藕、蝦、起司最經典。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/KuruKuruSushiRestaurant.jpg/800px-KuruKuruSushiRestaurant.jpg" alt="日本迴轉壽司"></div>
+          <div class="card-body">
+            <span class="tag">黑門 / 梅田</span>
+            <h3>海鮮、壽司、甜點</h3>
+            <p>黑門市場適合邊逛邊吃；梅田百貨地下街適合買甜點伴手禮。想省預算可安排一餐超市熟食。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="budget">
+      <div class="section-head">
+        <h2>預算估算</h2>
+        <p>以下以每人日圓估算，不含台灣往返大阪機票。實際住宿、USJ 與匯率會讓總額有明顯差異。</p>
+      </div>
+      <table class="budget">
+        <thead>
+          <tr><th>項目</th><th>省預算</th><th>舒適版</th><th>備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>住宿 2 晚</td><td>12,000 至 20,000</td><td>24,000 至 45,000+</td><td>以雙人房分攤估算，週末與櫻花季上浮。</td></tr>
+          <tr><td>市區交通</td><td>3,000 至 4,500</td><td>4,500 至 6,500</td><td>含機場往返、市區 Metro/JR。</td></tr>
+          <tr><td>USJ 門票</td><td>依日期票價</td><td>門票 + Express Pass</td><td>官網日期價格浮動，熱門日 Express Pass 價差大。</td></tr>
+          <tr><td>餐飲</td><td>9,000 至 14,000</td><td>15,000 至 25,000</td><td>含市場小吃、拉麵、居酒屋、咖啡甜點。</td></tr>
+          <tr><td>景點門票</td><td>1,500 至 3,000</td><td>3,000 至 6,000</td><td>大阪城、Harukas、展望台或遊船視取捨。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="checklist">
+      <div class="section-head">
+        <h2>行前清單</h2>
+        <p>出發前 7 天再確認一次營業時間、票價與天氣，尤其 USJ、展望台、遊船容易受日期與天候影響。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>必做</h3>
+          <ul>
+            <li>確認航班抵達與離開時間，反推機場交通。</li>
+            <li>預訂難波或心齋橋附近住宿，確認可寄放行李。</li>
+            <li>購買 USJ 指定日期門票，下載官方 App。</li>
+            <li>準備交通卡、行動網路、行動電源。</li>
+            <li>餐廳若有必吃名店，先查是否可預約。</li>
+          </ul>
+        </div>
+        <div class="panel sources">
+          <h3>官方參考連結</h3>
+          <p class="note">本頁資訊於 2026-06-22 規劃時查核。票價、營業時間、休園日與優惠內容請以官方頁面為準。</p>
+          <a href="https://www.kansai-airport.or.jp/en/access/train" target="_blank" rel="noopener">關西機場交通</a>
+          <a href="https://subway.osakametro.co.jp/en/guide/page/enjoy-eco.php" target="_blank" rel="noopener">Osaka Metro 一日券</a>
+          <a href="https://www.osp.osaka-info.jp/en/" target="_blank" rel="noopener">Osaka Amazing Pass</a>
+          <a href="https://www.osakacastle.net/" target="_blank" rel="noopener">大阪城天守閣</a>
+          <a href="https://www.usj.co.jp/web/en/us/tickets" target="_blank" rel="noopener">USJ 門票</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    大阪 3 天 2 夜行程規劃 · 建議列印或存成 PDF 離線使用
+  </footer>
+</body>
+</html>
